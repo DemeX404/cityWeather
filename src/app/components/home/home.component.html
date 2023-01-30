@@ -1,0 +1,26 @@
+<div class="container d-grid gap-3">
+    <div class="row p-2 bg-light border">
+        <div class="row g-2">
+            <div class="col-md">
+                <input type="text" id="info" #info (change)="searchCity(info.value)" placeholder="Search for city:"
+                    class="form-control" />
+            </div>
+            <div class="col-md">
+                <div class="form-floating">
+                    <select [(ngModel)]="infoCity" (change)="onSelect()" class="form-select form-select-sm"
+                        aria-label="Default select example">
+                        <option>Choose the city</option>
+                        <option *ngFor="let c of cities" [ngValue]="c">{{c.name}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-2 bg-light border">
+        <div class="accordion" id="accordionExample">
+            <app-list-cities *ngFor="let selectedCity of selectedCities; let i = index" [infoCity]=selectedCity
+                [indice]="i"></app-list-cities>
+        </div>
+    </div>
+</div>

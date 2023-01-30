@@ -1,0 +1,15 @@
+<form class="form-group" #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+    <h1>Login</h1>
+    <div class="form-group mb-3">
+        <label for="exampleInputUser" class="form-control">Username</label>
+        <input id="username" type="username" name="username" class="form-control" for="exampleInputUser" ngModel>
+    </div>
+    <div class="form-group mb-3">
+        <label for="exampleInputPassword" class="form-label">Password</label>
+        <input id="password" type="password" name="password" for="exampleInputPassword" class="form-control" ngModel>
+    </div>
+    <span *ngIf="credentials"> Invalid username or password. </span>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
